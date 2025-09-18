@@ -75,7 +75,7 @@ def add_restaurant(request):
 # Show Restaurants
 def open_show_restaurant(request):
     restaurants = Restaurant.objects.all()
-    return render(request, 'show_restaurants.html', {"restaurants": restaurants})
+    return render(request, 'display_restaurants.html', {"restaurants": restaurants})
 
 # Opens Update Restaurant Page
 def open_update_restaurant(request, restaurant_id):
@@ -105,11 +105,3 @@ def delete_restaurant(request, restaurant_id):
         restaurant.delete()
         return redirect("open_show_restaurant")  # make sure this view exists!
     
-    return render(request, "confirm_delete.html", {"restaurant": restaurant})
-    
-    
-
-
-        
-      
-            
